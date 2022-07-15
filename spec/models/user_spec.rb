@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe User, type: :model do
-  describe 'Check model relation of Payment models' do
+  describe 'Check model relation of User models' do
     it { should have_many :reservations }
     it { should have_many :motorcycles }
   end

@@ -17,7 +17,7 @@ class Api::V1::ReservationController < ApplicationController
   def create;
   user = User.create!(user_params)
   motorcycle = Motorcycle.create!(motorcycle_params)
-  reservation = Reservation.new(reservation_params) 
+  reservation = Reservation.new(reservation_params.merge(user_id: user.id), reservation_params.merge(motorcycle_id: motorcycle.id)) 
   if reservation.save
     render json: {status: 'SUCCESS', message: 'reservation save', data: reservation }, status: :ok
   else
@@ -30,5 +30,19 @@ class Api::V1::ReservationController < ApplicationController
       render json: {status: 'SUCCESS', message: 'reservation update', data: reservation }, status: :ok
     else
       render json: {status: 'ERROR', message: 'reservation is not updated', data: reservation.errors }, status: :unprocessable_entity
+  end
+
+  private
+  
+  def user_params
+    params.require(:user).permit(:first_name,:last_name,:email,:phone_number)
+  end
+
+  def motorcycle_params
+    params.require(:motorcycle).permit(:name,:image,:specification,:price)
+  end
+
+  def reservation_params
+    params.require(:reservation).permit(:user_id,:motorcycle_id,:city,:date)
   end
 end

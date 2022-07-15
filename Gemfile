@@ -44,6 +44,9 @@ group :development, :test do
 
   # Shoulda-matchers gem for easy model relationship testing in Rspec
   gem 'shoulda-matchers', '~> 3.1'
+
+  # Rspec rails for writing test cases
+  gem "rspec-rails"
 end
 
 group :development do

@@ -5,6 +5,11 @@
     end
 
     def show
-
+      @motorcycle = Motorcycle.find(params[:id])
+      render json: {status: "SUCCESS", message: "Loaded Motorcycle", data: @motorcycle}, status: :ok
     end
+
+    
+
+
   end

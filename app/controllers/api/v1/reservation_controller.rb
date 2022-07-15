@@ -4,7 +4,10 @@ class Api::V1::ReservationController < ApplicationController
   render json: {status: "SUCCESS", message: "Loaded all reservation", data: @reservations }, status: :ok
   end
 
-  def destroy; end
+  def destroy;
+  Reservation.find(params[:id]).destroy!
+  head :no_content
+  end
 
   def show; 
   @reservation = Reservation.find(params[:id])

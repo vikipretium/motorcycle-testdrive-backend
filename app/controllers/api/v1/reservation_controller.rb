@@ -1,5 +1,6 @@
-class ReservationController < ApplicationController
-  def index; end
+class Api::V1::ReservationController < ApplicationController
+  def index; 
+  end
 
   def destroy; end
 

@@ -24,5 +24,11 @@ class Api::V1::ReservationController < ApplicationController
     render json: {status: 'ERROR', message: 'reservation is not saved', data: reservation.errors }, status: :unprocessable_entity
   end
 
-  def update; end
+  def update; 
+  reservation = Reservation.find(params[:id])
+    if reservation.update(reservation_params)
+      render json: {status: 'SUCCESS', message: 'reservation update', data: reservation }, status: :ok
+    else
+      render json: {status: 'ERROR', message: 'reservation is not updated', data: reservation.errors }, status: :unprocessable_entity
+  end
 end

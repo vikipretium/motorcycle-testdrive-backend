@@ -15,10 +15,10 @@ Motorcycle.create([{name:"KTM 1290 SUPER DUKE R EVO",image:"https://azwecdnepsto
 
         The legend of Fireblade has evolved to grow bigger with time, and in 2020 we are here with two new variants created along with Honda Racing Corporation. The CBR1000RR-R Fireblade and CBR1000RR-R Fireblade SP are worthy of furthering the legacy of the original Fireblade.",price:28900}])
 
-User.create(first_name: "Roshan", last_name: "Bajgain", email: "ros@gmail.com", phone_number: 9842)    
-User.create(first_name: "Vignash", last_name: "singh", email: "vignas@gmail.com", phone_number: 7880)
-User.create(first_name: "David", last_name: "ouma", email: "david@gmail.com", phone_number: 7880)   
-User.create(first_name: "Alick", last_name: "Nyirenda", email: "alick@gmail.com", phone_number: 9880)  
+User.create(full_name: "Roshan", email: "ros@gmail.com")    
+User.create(full_name: "Vignash", email: "vignas@gmail.com")
+User.create(full_name: "David", email: "david@gmail.com")   
+User.create(full_name: "Alick", email: "alick@gmail.com")  
 
 Reservation.create(user_id: 1, motorcycle_id: 1, city: "london",date: 2022-01-10)
 Reservation.create(user_id: 2, motorcycle_id: 2, city: "Kathmandu",date: 2022-02-15)

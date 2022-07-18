@@ -1,6 +1,13 @@
 class Api::V1::ReservationController < ApplicationController
   def index
-    reservations = Reservation.all
+    reservations = User.find(params[:user_id]).reservations.map do |reservation|
+      {
+        id: reservation.id,
+        motorcycle_id: reservation.motorcycle_id,
+        city: reservation.city,
+        date: reservation.date
+      }
+    end
     render json: { status: 'SUCCESS', message: 'Loaded all reservation', data: reservations }, status: :ok
   end
 

@@ -19,8 +19,7 @@ class Api::V1::ReservationController < ApplicationController
   end
 
   def show
-    reservation = Reservation.find(params[:id])
-    render json: { status: 'SUCCESS', message: 'Loaded reservation', data: reservation }, status: :ok
+    render json: { status: 'SUCCESS', message: 'Loaded reservation', data: @reservation }, status: :ok
   end
 
   def create

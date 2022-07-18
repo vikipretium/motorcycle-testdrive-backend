@@ -1,7 +1,7 @@
 class Api::V1::UsersController < ApplicationController
   before_action :set_user, only: %i[show update destroy]
 
-  def index 
+  def index
     users = User.all
     if users
       render json: { status: 'SUCCESS', message: 'Users loaded', data: users }, status: :ok
@@ -33,8 +33,7 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  def update
-  end
+  def update; end
 
   private
 

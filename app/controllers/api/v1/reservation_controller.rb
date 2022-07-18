@@ -23,10 +23,7 @@ class Api::V1::ReservationController < ApplicationController
   end
 
   def create
-    user = User.create!(user_params)
-    motorcycle = Motorcycle.create!(motorcycle_params)
-    reservation = Reservation.new(reservation_params.merge(user_id: user.id),
-                                  reservation_params.merge(motorcycle_id: motorcycle.id))
+    reservation = Reservation.new(reservation_params)
     if reservation.save
       render json: { status: 'SUCCESS', message: 'reservation save', data: reservation }, status: :ok
     else

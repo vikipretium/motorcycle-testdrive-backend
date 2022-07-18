@@ -59,4 +59,8 @@ class Api::V1::ReservationController < ApplicationController
   def reservation_params
     params.require(:reservation).permit(:user_id, :motorcycle_id, :city, :date)
   end
+
+  def set_reservation
+    @reservation = Reservation.find(params[:id])
+  end
 end

@@ -1,5 +1,5 @@
 class Api::V1::ReservationController < ApplicationController
-  before_action :set_reservation, only: [:show, :update, :destroy]
+  before_action :set_reservation, only: %i[show update destroy]
 
   def index
     reservations = User.find(params[:user_id]).reservations.map do |reservation|
@@ -28,7 +28,7 @@ class Api::V1::ReservationController < ApplicationController
       render json: { status: 'SUCCESS', message: 'reservation save', data: reservation }, status: :ok
     else
       render json: { status: 'ERROR', message: 'reservation is not saved', data: reservation.errors },
-            status: :unprocessable_entity
+             status: :unprocessable_entity
     end
   end
 

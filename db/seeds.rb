@@ -18,4 +18,9 @@ Motorcycle.create([{name:"KTM 1290 SUPER DUKE R EVO",image:"https://azwecdnepsto
 User.create(first_name: "Roshan", last_name: "Bajgain", email: "ros@gmail.com", number: 9842700880)    
 User.create(first_name: "Vignash", last_name: "singh", email: "vignas@gmail.com", number: 9842700880)   
 User.create(first_name: "David", last_name: "ouma", email: "david@gmail.com", number: 9842700880)   
-User.create(first_name: "Alick", last_name: "Nyirenda", email: "alick@gmail.com", number: 9842700880)   
+User.create(first_name: "Alick", last_name: "Nyirenda", email: "alick@gmail.com", number: 9842700880)  
+
+Reservation.create(user_id: 1, motorcycle_id: 1, city: "london")
+Reservation.create(user_id: 2, motorcycle_id: 2, city: "Kathmandu")
+Reservation.create(user_id: 3, motorcycle_id: 3, city: "Delhi")
+Reservation.create(user_id: 4, motorcycle_id: 4, city: "paris")

@@ -28,7 +28,7 @@ class Api::V1::ReservationController < ApplicationController
       render json: { status: 'SUCCESS', message: 'reservation save', data: reservation }, status: :ok
     else
       render json: { status: 'ERROR', message: 'reservation is not saved', data: reservation.errors },
-             status: :unprocessable_entity
+            status: :unprocessable_entity
     end
   end
 

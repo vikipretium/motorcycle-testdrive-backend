@@ -33,7 +33,6 @@ class Api::V1::ReservationController < ApplicationController
   end
 
   def update
-    reservation = Reservation.find(params[:id])
     if reservation.update(reservation_params)
       render json: { status: 'SUCCESS', message: 'reservation update', data: reservation }, status: :ok
     else
@@ -43,14 +42,6 @@ class Api::V1::ReservationController < ApplicationController
   end
 
   private
-
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :phone_number)
-  end
-
-  def motorcycle_params
-    params.require(:motorcycle).permit(:name, :image, :specification, :price)
-  end
 
   def reservation_params
     params.require(:reservation).permit(:user_id, :motorcycle_id, :city, :date)

@@ -10,6 +10,19 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user.destroy
+    head :no_content
+  end
+
+  def show
+    if @user
+      render json: { status: 'SUCCESS', message: 'User loaded', data: @user }, status: :ok
+    else
+      render json: { status: 'ERROR', message: 'User not loaded', data: @user.errors }, status: :unprocessable_entity
+    end
+  end
+
   def update
   end
 

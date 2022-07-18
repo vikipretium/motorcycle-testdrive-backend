@@ -1,4 +1,6 @@
 class Api::V1::ReservationController < ApplicationController
+  before_action :set_reservation, only: [:show, :update, :destroy]
+
   def index
     reservations = User.find(params[:user_id]).reservations.map do |reservation|
       {

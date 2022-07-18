@@ -19,9 +19,8 @@ Rails.application.routes.draw do
   namespace :v1 do
     resources :motorcycles, only: [:index,:show]
     resources :user, only: [:index,:destroy,:show,:create,:update] do
-    resources :reservations, only: [:index,:destroy,:show,:create,:update]
-    resources :user, only: [:index,:destroy,:show,:create,:update]
-    
+      resources :reservations, only: [:index,:destroy,:show,:create,:update]
+    end
   end
   end
 end

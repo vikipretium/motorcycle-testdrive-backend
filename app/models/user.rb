@@ -3,6 +3,5 @@ class User < ApplicationRecord
   has_many :motorcycles, through: :reservations, dependent: :destroy
   has_many :motorcycles
 
-  validates :first_name, :last_name, :email, :phone_number, presence: true
-  validates_numericality_of :phone_number, on: :create
+  validates :full_name, :email, presence: true
 end

@@ -24,6 +24,10 @@ describe 'Authentication', type: :request do
       expect(response.body).to include('error')
     end
 
+    it 'should return error if invalid email and password' do
+      post '/api/v1/authenticate', params: { email: user.email, password: "invalid" }
 
+      expect(response).to have_http_status(:unauthorized)
+    end 
   end
 end

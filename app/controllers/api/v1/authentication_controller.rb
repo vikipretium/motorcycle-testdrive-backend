@@ -4,7 +4,6 @@ rescue_from ActionController::ParameterMissing, with: :parameter_missing
 rescue_from AuthenticationError, with: :handle_unauthenticated
 
   def create
-    p params.require(:password).inspect
     user = User.find_by(email: params.require(:email))
     raise AuthenticationError unless user.authenticate(params.require(:password))
     token = AuthenticationTokenService.call(user.id)

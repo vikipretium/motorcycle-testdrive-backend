@@ -48,6 +48,7 @@ group :development, :test do
 
   # Rspec rails for writing test cases
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do

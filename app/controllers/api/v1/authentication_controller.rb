@@ -11,6 +11,12 @@ rescue_from AuthenticationError, with: :handle_unauthenticated
     render json: { token: token }, status: :created
   end
 
+  private
+
+  def user
+    @user ||= User.find_by(email: params.require(:email)) 
+  end
+
   def parameter_missing(e)
     render json: { error: e.message }, status: :unprocessable_entity
   end

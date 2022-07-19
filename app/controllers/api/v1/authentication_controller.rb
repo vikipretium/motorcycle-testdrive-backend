@@ -13,4 +13,8 @@ rescue_from AuthenticationError, with: :handle_unauthenticated
   def parameter_missing(e)
     render json: { error: e.message }, status: :unprocessable_entity
   end
+
+  def handle_unauthenticated
+    head :unauthorized
+  end
 end

@@ -11,6 +11,14 @@ rescue_from AuthenticationError, with: :handle_unauthenticated
     render json: { token: token }, status: :created
   end
 
+
+  def token_validation
+    token = request.headers['Authorization']
+    user = User.find(AuthenticationTokenService.decode(token)["user_id"])
+    
+    render json: { user: user }, status: :success
+  end
+
   private
 
   def user

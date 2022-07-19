@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     end
 
     post 'authenticate', to: 'authentication#create'
+    get 'authenticate', to: 'authentication#token_validation'
   end
   end
 end

@@ -1,5 +1,6 @@
 class Api::V1::AuthenticationController < ApplicationController
 rescue_from ActionController::ParameterMissing, with: :parameter_missing
+rescue_from AuthenticationError, with: :handle_unauthenticated
 
   def create
     p params.require(:password).inspect

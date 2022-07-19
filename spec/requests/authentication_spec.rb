@@ -12,12 +12,14 @@ describe 'Authentication', type: :request do
       post '/api/v1/authenticate', params: { password: "password1"}
 
       expect(response).to have_http_status(:unprocessable_entity)
+      expect(response.body).to include('error')
     end
 
     it 'should return error if invalid password' do
       post '/api/v1/authenticate', params: { email: "david@gmail.com" }
 
       expect(response).to have_http_status(:unprocessable_entity)
+      expect(response.body).to include('error')
     end
 
 

@@ -14,8 +14,9 @@ class Api::V1::AuthenticationController < ApplicationController
   end
 
   def token_validation
-    # Authorization: Bearer <token>
+    # rubocop:disable Style/RedundantArgument: Argument
     token = request.headers['Authorization'].split(' ').last
+    # rubocop:enable Style/RedundantArgument: Argument
     user_id = AuthenticationTokenService.decode(token)
     user = User.find(user_id)
 

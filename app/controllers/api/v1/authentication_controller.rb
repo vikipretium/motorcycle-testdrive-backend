@@ -1,5 +1,7 @@
 class Api::V1::AuthenticationController < ApplicationController
   class AuthenticationError < StandardError; end
+  include ActionController::HttpAuthentication::Token
+
   rescue_from ActionController::ParameterMissing, with: :parameter_missing
   rescue_from AuthenticationError, with: :handle_unauthenticated
 

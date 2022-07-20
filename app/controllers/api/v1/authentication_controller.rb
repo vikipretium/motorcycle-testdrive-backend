@@ -1,6 +1,5 @@
 class Api::V1::AuthenticationController < ApplicationController
   class AuthenticationError < StandardError; end
-  include ActionController::HttpAuthentication::Token
 
   rescue_from ActionController::ParameterMissing, with: :parameter_missing
   rescue_from AuthenticationError, with: :handle_unauthenticated
@@ -16,7 +15,7 @@ class Api::V1::AuthenticationController < ApplicationController
 
   def token_validation
     # Authorization: Bearer <token>
-    token, _options = token_and_options(request)
+    token = request.headers['Authorization'].split(' ').last
     user_id = AuthenticationTokenService.decode(token)
     user = User.find(user_id)
 

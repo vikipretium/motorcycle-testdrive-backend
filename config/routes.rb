@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     resources :users do
       resources :reservations
     end
+
+    post 'authenticate', to: 'authentication#create'
+    get 'authenticate', to: 'authentication#token_validation'
   end
   end
 end

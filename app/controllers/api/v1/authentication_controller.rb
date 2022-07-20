@@ -20,7 +20,7 @@ class Api::V1::AuthenticationController < ApplicationController
     user_id = AuthenticationTokenService.decode(token)
     user = User.find(user_id)
 
-    render json: {status:"authorized", data: user }, status: :ok
+    render json: { status: 'authorized', data: user }, status: :ok
   end
 
   private

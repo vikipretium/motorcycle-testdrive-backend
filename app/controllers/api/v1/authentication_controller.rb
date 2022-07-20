@@ -15,10 +15,12 @@ class Api::V1::AuthenticationController < ApplicationController
   end
 
   def token_validation
-    token = request.headers['Authorization']
-    user = User.find(AuthenticationTokenService.decode(token)['user_id'])
+    # Authorization: Bearer <token>
+    token, _options = token_and_options(request)
+    user_id = AuthenticationTokenService.decode(token)
+    user = User.find(user_id)
 
-    render json: { user: }, status: :success
+    render json: {status:"authorized", data: user }, status: :ok
   end
 
   private

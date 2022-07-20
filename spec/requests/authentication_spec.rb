@@ -29,5 +29,12 @@ describe 'Authentication', type: :request do
 
       expect(response).to have_http_status(:unauthorized)
     end
+
+    # it 'should return error if invalid token' do
+    #   get '/api/v1/authenticate', params: { email: user.email, password: user.password }, 
+    #   headers: {"Authorization" => "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQifQ.-4Hw8wX3yfZFm-L4_YwCnEIMY0lu1TtOokZ-rvdWujg"}
+
+    #   expect(response).to have_http_status(:unauthorized)
+    # end
   end
 end

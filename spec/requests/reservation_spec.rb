@@ -16,4 +16,17 @@ RSpec.describe 'Reservations', type: :request do
       expect(JSON.parse(response.body)["data"].size).to eq(2)
     end
   end
+
+  describe 'api/v1/user/:id/reservation/' do
+    it 'creates a user reservation' do
+      expect do
+          post "/api/v1/users/#{@user.id}/reservations", 
+          params: { reservation: { user_id: @user.id, motorcycle_id: @motorcycle.id, city: 'city 1', date: '2020-01-01' } }
+      end.to change { Reservation.count }.by(1)
+
+      expect(response).to have_http_status(:success)
+      expect(JSON.parse(response.body)["data"]["city"]).to eq("city 1")
+    end
+  end
+
 end

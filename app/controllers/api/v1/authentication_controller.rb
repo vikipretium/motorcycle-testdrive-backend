@@ -10,7 +10,11 @@ class Api::V1::AuthenticationController < ApplicationController
 
     token = AuthenticationTokenService.call(user.id)
 
-    render json: { token: }, status: :created
+    if token
+      render json: { data: token }, status: :created
+    else
+      render json: { error: 'Could not create token' }, status: :unprocessable_entity
+    end
   end
 
   def token_validation

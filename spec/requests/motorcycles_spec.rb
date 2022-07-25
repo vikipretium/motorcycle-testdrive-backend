@@ -11,8 +11,16 @@ describe 'Motorcycles Api', type: :request do
     get '/api/v1/motorcycles'
 
     expect(response).to have_http_status(:success)
-    p (JSON.parse(response.body))
     expect(JSON.parse(response.body)["data"].size).to eq(1)
+    end
+  end
+
+  describe 'ap1/v1/motorcycle/:id' do
+    it 'returns a motorcycle' do
+      get '/api/v1/motorcycles/1'
+
+      expect(response).to have_http_status(:success)
+      expect(JSON.parse(response.body)["data"]["name"]).to eq("bike 1")
     end
   end
 end

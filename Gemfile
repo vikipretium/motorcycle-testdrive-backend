@@ -49,6 +49,7 @@ group :development, :test do
   # Rspec rails for writing test cases
   gem 'factory_bot_rails'
   gem 'rspec-rails'
+  gem 'database_cleaner'
 end
 
 group :development do

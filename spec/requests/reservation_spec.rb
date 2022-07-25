@@ -15,6 +15,13 @@ RSpec.describe 'Reservations', type: :request do
       expect(response).to have_http_status(:success)
       expect(JSON.parse(response.body)["data"].size).to eq(2)
     end
+
+    it 'returns a specific user reservation' do
+      get "/api/v1/users/#{@user.id}/reservations/#{@reservation.id}"
+
+      expect(response).to have_http_status(:success)
+      expect(JSON.parse(response.body)["data"]["id"]).to eq(@reservation.id)
+    end
   end
 
   describe 'api/v1/user/:id/reservation/' do

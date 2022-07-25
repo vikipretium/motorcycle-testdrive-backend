@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   namespace :v1 do
     resources :motorcycles, only: [:index,:show]
     resources :users do
-      resources :reservations
+      resources :reservations, only: [:index, :create, :destroy, :show]
     end
 
     post 'login', to: 'authentication#create'

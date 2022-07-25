@@ -32,15 +32,6 @@ class Api::V1::ReservationsController < ApplicationController
     end
   end
 
-  def update
-    if reservation.update(reservation_params)
-      render json: { status: 'SUCCESS', message: 'reservation update', data: @reservation }, status: :ok
-    else
-      render json: { status: 'ERROR', message: 'reservation is not updated', data: @reservation.errors },
-             status: :unprocessable_entity
-    end
-  end
-
   private
 
   def reservation_params

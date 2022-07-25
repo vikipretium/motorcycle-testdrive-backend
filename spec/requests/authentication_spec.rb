@@ -5,9 +5,9 @@ describe 'Authentication', type: :request do
     let(:user) { User.create(full_name: 'John', email: 'john@gmail.com', password: '123456') }
 
     it 'should authenticate the client' do
-      post '/api/v1/register', params: { email: user.email, password: user.password }
+      post '/api/v1/login', params: { email: user.email, password: user.password }
       expect(response).to have_http_status(:created)
-      expect(response.body).to include('token')
+      expect(JSON.parse(response.body)["data"]).to eq('eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.DiPWrOKsx3sPeVClrm_j07XNdSYHgBa3Qctosdxax3w')
     end
 
     it 'should return error if invalid email' do

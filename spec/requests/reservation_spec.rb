@@ -29,4 +29,14 @@ RSpec.describe 'Reservations', type: :request do
     end
   end
 
+  describe 'api/v1/user/:id/reservation/:id' do
+    it 'deletes a user reservation' do
+      expect do
+        delete '/api/v1/users/1/reservations/1'
+      end.to change { Reservation.count }.by(-1)
+
+      expect(response).to have_http_status(:no_content)
+      expect(Reservation.find_by(id: 1)).to be_nil
+    end
+  end
 end

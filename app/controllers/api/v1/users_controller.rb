@@ -11,8 +11,8 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
-    render json: { status: 'SUCCESS', message: 'User deleted', data: @user }, status: :ok
+    @user.destroy!
+    head :no_content
   end
 
   def show

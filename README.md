@@ -6,7 +6,7 @@
 > The project is the supporting backed for the Motorcycle service app found on this repository. It handles all the backend logic and generated API
 
 ## Link to the Fron-end
-[Motorcycle Appoinments Backend](https://github.com/vikipretium/motorcycle-testdrive-frontend/tree/dev)
+[Motorcycle Appoinments fronend](https://github.com/vikipretium/motorcycle-testdrive-frontend/tree/dev)
 
 ## Kanban Board
 [Kanban Board](https://github.com/users/vikipretium/projects/1/views/1)
@@ -24,10 +24,6 @@
 - PostgreSQL
 - Terminal
 
-## Live version
-
-[Motorcycle-Appoinments]()
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
@@ -43,6 +39,8 @@ To get a local copy up and running follow these simple example steps.
 
 ```bash 
 git@github.com:vikipretium/motorcycle-testdrive-backend.git
+
+cd motorcycle-testdrive
 
 ```
 
@@ -96,12 +94,6 @@ run the test with:
 
 ```
 rspec .
-```
-
-### Open API documentation
-
-```
-rails server
 ```
 
 

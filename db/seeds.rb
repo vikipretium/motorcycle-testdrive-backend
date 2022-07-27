@@ -14,24 +14,27 @@ Motorcycle.create([
     delivery, nimbler handling, and a collection of electronic assist
     systems that make the Hayabusa more controllable, predictable and
     reliable. And all this wrapped in a package with breathtaking style
-    and grace.",price:19400},
+    and grace.",price:20999},
 
     {name:"SuperVeloce S",image:"https://res.cloudinary.com/dyms6bxn7/image/upload/v1658411193/Motohub/main_page/02_supervelocity_gv5wef.png",specification:" The new MV Superveloce S takes attention to detail to the extreme.
     The new Surreal White exterior highlights the timeless lines, which
     were designed in a wind tunnel. The spoke wheels are an elegant
     tribute to the bikes of the past, but with the efficiency and weight
-    of a modern wheel.",price:56500},
+    of a modern wheel.",price:25870},
     
-    {name:"F3",image:"https://res.cloudinary.com/dyms6bxn7/image/upload/v1658411208/Motohub/main_page/03_f3_e10jxv.png",specification:"The Panigale V4 MY23 represents the last step in the characteristic path of Borgo Panigale's sports bikes. As is the case with motorcycles engaged in MotoGP and WorldSBK, the Panigale V4 is updated and improved year after year, and the 2022 version represents the most significant evolution since its launch year. For MY2023, a series of electronic improvements have been introduced that make the bike even easier and more intuitive for riders of all levels. ",price:29995},
+    {name:"F3",image:"https://res.cloudinary.com/dyms6bxn7/image/upload/v1658411208/Motohub/main_page/03_f3_e10jxv.png",specification:" The F3 Rosso takes F3 characteristic features to the extreme. Lines
+    designed for performance but projected into the future. Style and
+    performance that find their maximum expression in the contrast
+    between the red superstructure and the completely black components. ",price:18998},
     
-    {name:"YFZ-R1",image:"https://res.cloudinary.com/dyms6bxn7/image/upload/v1658411193/Motohub/main_page/04_r1_gfl6ai.png",specification:" R HISTORY. YOUR FUTURE. WE R1. Featuring next‑generation R‑Series
+    {name:"YFZ-R1",image:"https://res.cloudinary.com/dyms6bxn7/image/upload/v1658411193/Motohub/main_page/04_r1_gfl6ai.png",specification:"Featuring next‑generation R‑Series
     styling, sophisticated electronic control, supersport braking and
-    suspension performance and a high‑performance crossplane engine.",price:17599},
+    suspension performance and a high‑performance crossplane engine.",price:26099},
 
-    {name:"Dragster RR SCS",image:"https://res.cloudinary.com/dyms6bxn7/image/upload/v1658411194/Motohub/main_page/05_drag_takkok.png",specification:" Inimitable, with a unique personality. The curves of the fuel tank
+    {name:"Dragster RR SCS",image:"https://res.cloudinary.com/dyms6bxn7/image/upload/v1658411194/Motohub/main_page/05_drag_takkok.png",specification:"Inimitable, with a unique personality. The curves of the fuel tank
     and headlight, the bobbed tail and the elegant spoke wheels superbly
     frame the three-cylinder engine at the heart of the Dragster. Ready
-    for action, bursting with exuberance and power. ",price:29995},
+    for action, bursting with exuberance and power. ",price:26000},
 
     {name:"FIREBLADE CBR 1000RR-R",image:"https://res.cloudinary.com/dyms6bxn7/image/upload/v1658411204/Motohub/main_page/06_cbr_pp9mhp.png",specification:"Introduced in 1992, Honda’s iconic Fireblade took the world by storm, evolving into an incredible 1000cc machine while creating a legacy both on the track and off it. The motorcycle was also a blueprint for many competitive racing machines, and has even left a mark on The Isle of Man TT.
     The legend of Fireblade has evolved to grow bigger with time, and in 2020 we are here with two new variants created along with Honda Racing Corporation. The CBR1000RR-R Fireblade and CBR1000RR-R Fireblade SP are worthy of furthering the legacy of the original Fireblade.",price:28900},
@@ -41,7 +44,7 @@ Motorcycle.create([
     {name:"Rush 1000",image:"https://res.cloudinary.com/dyms6bxn7/image/upload/v1658411195/Motohub/main_page/08_rush_alhaqt.png",specification:"The design choices highlight the uniqueness of the idea behind the
     Rush, a bike meant for those who are not afraid to stand-out of the
     crowd with out-of-the-ordinary details, such as she lenticular
-    rear-wheel, typical of acceleration races.",price:29995},
+    rear-wheel, typical of acceleration races.",price:47300},
 
     {name:"Panigale V4S",image:"https://res.cloudinary.com/dyms6bxn7/image/upload/v1658411194/Motohub/main_page/09_panigale_dcvj4r.png",specification:"The Panigale V4 MY23 represents the last step in the characteristic path of Borgo Panigale's sports bikes. As is the case with motorcycles engaged in MotoGP and WorldSBK, the Panigale V4 is updated and improved year after year, and the 2022 version represents the most significant evolution since its launch year. For MY2023, a series of electronic improvements have been introduced that make the bike even easier and more intuitive for riders of all levels. ",price:29995},
     

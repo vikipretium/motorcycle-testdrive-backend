@@ -1,9 +1,7 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/v1/motorcycles', type: :request do
-
   path '/api/v1/motorcycles' do
-
     get('list motorcycles') do
       response(200, 'successful') do
         consumes 'application/json'

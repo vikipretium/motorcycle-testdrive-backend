@@ -5,7 +5,7 @@
 
 > The project is the supporting backed for the Motorcycle service app found on this repository. It handles all the backend logic and generated API
 
-## Link to the Fron-end
+## Link to the Front-end
 [Motorcycle Appoinments fronend](https://github.com/vikipretium/motorcycle-testdrive-frontend/tree/dev)
 
 ## Kanban Board

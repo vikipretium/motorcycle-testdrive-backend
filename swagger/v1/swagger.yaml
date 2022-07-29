@@ -1,0 +1,272 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/login":
+    post:
+      summary: create authentication
+      responses:
+        '200':
+          description: successful
+  "/api/v1/authenticate":
+    get:
+      summary: token_validation authentication
+      responses:
+        '200':
+          description: successful
+  "/api/v1/motorcycles":
+    get:
+      summary: list motorcycles
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                specification:
+                  type: string
+                price:
+                  type: integer
+                image:
+                  type: string
+              required:
+              - name
+              - specification
+              - price
+              - image
+  "/api/v1/motorcycles/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show motorcycle
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                specification:
+                  type: string
+                price:
+                  type: integer
+                image:
+                  type: string
+              required:
+              - name
+              - specification
+              - price
+              - image
+  "/api/v1/users/{user_id}/reservations":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list reservations
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                motorcycle_id:
+                  type: string
+                city:
+                  type: integer
+                date:
+                  type: string
+              required:
+              - user_id
+              - motorcycle_id
+              - city
+              - date
+    post:
+      summary: create reservation
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                motorcycle_id:
+                  type: string
+                city:
+                  type: integer
+                date:
+                  type: string
+              required:
+              - user_id
+              - motorcycle_id
+              - city
+              - date
+  "/api/v1/users/{user_id}/reservations/{id}":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show reservation
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                motorcycle_id:
+                  type: string
+                city:
+                  type: integer
+                date:
+                  type: string
+              required:
+              - user_id
+              - motorcycle_id
+              - city
+              - date
+    delete:
+      summary: delete reservation
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                motorcycle_id:
+                  type: string
+                city:
+                  type: integer
+                date:
+                  type: string
+              required:
+              - user_id
+              - motorcycle_id
+              - city
+              - date
+  "/api/v1/users":
+    get:
+      summary: list users
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                full_name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - full_name
+              - email
+              - password
+    post:
+      summary: create user
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                full_name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - full_name
+              - email
+              - password
+  "/api/v1/register":
+    post:
+      summary: create user
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                full_name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: integer
+              required:
+              - full_name
+              - email
+              - password
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
